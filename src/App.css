@@ -1,0 +1,129 @@
+.app {
+  min-height: 100vh;
+  background: #000;
+  padding: 22px 30px 40px;
+  box-sizing: border-box;
+}
+
+.page-title {
+  color: #fff;
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Status messages ------------------------------------------------------ */
+
+.status {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.status-loading {
+  color: #d1d5db;
+}
+
+.status-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #fca5a5;
+  border: 1px solid #b91c1c;
+  background: #1a0505;
+}
+
+.status-error strong {
+  font-size: 1.15rem;
+}
+
+.retry-btn {
+  margin-top: 8px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #b91c1c;
+  border: 1px solid #ef4444;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: #ef4444;
+}
+
+/* Card grid ------------------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Stack cards responsively on smaller screens */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    padding: 20px 16px 30px;
+  }
+}
+
+/* Skeleton placeholders ------------------------------------------------- */
+
+.skeleton {
+  align-items: center;
+  gap: 14px;
+}
+
+.skeleton-image {
+  width: 62%;
+  aspect-ratio: 1 / 1;
+}
+
+.skeleton-line {
+  width: 80%;
+  height: 14px;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #131320 25%, #262626 50%, #131320 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+  }
+}
